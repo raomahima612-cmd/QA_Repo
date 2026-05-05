@@ -1,0 +1,20 @@
+trigger: none
+
+pool:
+  name: Default
+
+steps:
+- checkout: self
+  displayName: 'Checkout QA Automation Repo'
+
+- script: |
+    mvn clean test -f stellarai-login-automation/pom.xml
+  displayName: 'Run StellarAI Selenium Tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    failTaskOnFailedTests: true
+  condition: succeededOrFailed()
+  displayName: 'Publish Test Results'
