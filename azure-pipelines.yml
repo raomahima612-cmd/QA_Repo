@@ -5,7 +5,7 @@ resources:
     - repository: devRepo
       type: github
       name: raomahima612-cmd/stellarai-dev-dummy
-      endpoint: GitHub-Service-Connection
+      endpoint: github.com_raomahima612-cmd
 
 pool:
   name: Default
