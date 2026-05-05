@@ -1,5 +1,12 @@
 trigger: none
 
+resources:
+  repositories:
+    - repository: devRepo
+      type: github
+      name: raomahima612-cmd/stellarai-dev-dummy
+      endpoint: GitHub-Service-Connection
+
 pool:
   name: Default
 
